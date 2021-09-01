@@ -10,3 +10,8 @@ This is a skeleton project used for the tutorial series '[A hands-on introductio
 - Part 2: [Building a volleyball reinforcement learning environment](https://www.gocoder.one/blog/reinforcement-learning-environment-using-unity-mlagents)
 - Part 3: Designing an agent and selecting observations (Coming soon)
 - Part 4: Training an agent using PPO (Coming soon)
+
+## Credits
+- Agent Cube prefabs, materials, and sample code from the ML-Agents projects
+- Volleyball prefab & sand material from [Free Beach Essentials Asset Pack](https://assetstore.unity.com/packages/3d/props/free-beach-essentials-asset-pack-131149)
+- Net material from [Free Grids & Nets Materials Pack](https://assetstore.unity.com/packages/2d/textures-materials/yughues-free-grids-nets-materials-13004)
