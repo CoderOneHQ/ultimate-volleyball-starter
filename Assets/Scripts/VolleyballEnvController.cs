@@ -133,13 +133,6 @@ public class VolleyballEnvController : MonoBehaviour
     }
 
     /// <summary>
-    /// Reset ball spawn conditions
-    /// </summary>
-    void ResetBall()
-    {
-    }
-
-    /// <summary>
     /// Changes the color of the ground for a moment.
     /// </summary>
     /// <returns>The Enumerator to be used in a Coroutine.</returns>
@@ -172,6 +165,13 @@ public class VolleyballEnvController : MonoBehaviour
     /// Reset agent and ball spawn conditions.
     /// </summary>
     public void ResetScene()
+    {
+    }
+
+    /// <summary>
+    /// Reset ball spawn conditions
+    /// </summary>
+    void ResetBall()
     {
     }
 }
