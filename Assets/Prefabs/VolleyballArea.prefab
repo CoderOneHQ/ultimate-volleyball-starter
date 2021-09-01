@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 1299590422412172917}
   - component: {fileID: 6156311488261871781}
   - component: {fileID: 418120565631743182}
-  - component: {fileID: 5002344052212756053}
   m_Layer: 0
   m_Name: BlueGoal
   m_TagString: blueGoal
@@ -115,32 +114,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5002344052212756053
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254629476493177227}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 30, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &6812600509886783507
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317026924745720295}
-  m_Material: {fileID: 13400000, guid: 54ed79b9254e1456587c8cf3849f6dc1, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.15
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &705820608372995857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,7 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ce6a60fb54c16941b338046d26e4e67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  area: {fileID: 7954672815519958404}
   envController: {fileID: 0}
   purpleGoal: {fileID: 5132028400407904075}
   blueGoal: {fileID: 1254629476493177227}
@@ -391,7 +363,6 @@ GameObject:
   - component: {fileID: 2701405722952999483}
   - component: {fileID: 4316377432354959411}
   - component: {fileID: 2067124489125362645}
-  - component: {fileID: 6548335940184559316}
   m_Layer: 0
   m_Name: PurpleGoal
   m_TagString: purpleGoal
@@ -462,19 +433,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6548335940184559316
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5132028400407904075}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 30, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5501864745727209264
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,7 +590,7 @@ GameObject:
   - component: {fileID: 7954672815519958407}
   - component: {fileID: 7954672815519958406}
   m_Layer: 0
-  m_Name: 2PVolleyballArea
+  m_Name: VolleyballArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -839,7 +797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1799704108992190, guid: 60f4bdfb49a7840a2989bbd741e814f2, type: 3}
       propertyPath: m_TagString
-      value: ball
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4974979531414260, guid: 60f4bdfb49a7840a2989bbd741e814f2, type: 3}
       propertyPath: m_RootOrder
@@ -897,12 +855,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1433348734972425660, guid: 60f4bdfb49a7840a2989bbd741e814f2, type: 3}
-      propertyPath: m_Mass
-      value: 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6435745123777533017, guid: 60f4bdfb49a7840a2989bbd741e814f2, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60f4bdfb49a7840a2989bbd741e814f2, type: 3}
 --- !u!4 &1319780535009680813 stripped
 Transform:
@@ -921,26 +874,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7954672815519958407}
     m_Modifications:
-    - target: {fileID: 8576409450398573086, guid: c1d04c017b1be1644ad85fef77194f29, type: 3}
-      propertyPath: m_Size.z
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8576409450398573086, guid: c1d04c017b1be1644ad85fef77194f29, type: 3}
-      propertyPath: m_Center.x
-      value: 0.008979672
-      objectReference: {fileID: 0}
-    - target: {fileID: 8576409450398573086, guid: c1d04c017b1be1644ad85fef77194f29, type: 3}
-      propertyPath: m_Center.y
-      value: -0.2700001
-      objectReference: {fileID: 0}
-    - target: {fileID: 8576409450398573086, guid: c1d04c017b1be1644ad85fef77194f29, type: 3}
-      propertyPath: m_Center.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8576409450398573086, guid: c1d04c017b1be1644ad85fef77194f29, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: c91b8cd35af0f7f4b9cd12a2f271c6f2, type: 2}
     - target: {fileID: 8576409450756380772, guid: c1d04c017b1be1644ad85fef77194f29, type: 3}
       propertyPath: m_Name
       value: VolleyballNet
@@ -1330,6 +1263,10 @@ PrefabInstance:
     - target: {fileID: 2682536981042529059, guid: 5f88f8c99d5312c44a537021f476e2ce, type: 3}
       propertyPath: m_Name
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682536981042529059, guid: 5f88f8c99d5312c44a537021f476e2ce, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 2682536981042529063, guid: 5f88f8c99d5312c44a537021f476e2ce, type: 3}
       propertyPath: m_RootOrder
