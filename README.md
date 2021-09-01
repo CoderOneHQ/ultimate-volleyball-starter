@@ -7,7 +7,7 @@ This is a skeleton project used for the tutorial series '[A hands-on introductio
 ## Sections
 
 - Part 1: [Getting started with Unity ML-Agents](https://www.gocoder.one/blog/introduction-to-unity-ml-agents)
-- Part 2: [Building a volleyball reinforcement learning environment](https://www.gocoder.one/blog/reinforcement-learning-environment-using-unity-mlagents)
+- Part 2: [Building a volleyball reinforcement learning environment](https://www.gocoder.one/blog/build-a-reinforcement-learning-environment-using-unity-mlagents)
 - Part 3: Designing an agent and selecting observations (Coming soon)
 - Part 4: Training an agent using PPO (Coming soon)
 
