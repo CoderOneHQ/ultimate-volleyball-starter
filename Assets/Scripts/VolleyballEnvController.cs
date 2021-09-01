@@ -91,61 +91,42 @@ public class VolleyballEnvController : MonoBehaviour
                 if (lastHitter == Team.Blue)
                 {
                     // apply penalty to blue agent
-                    blueAgent.AddReward(-0.1f);
-                    purpleAgent.AddReward(0.1f);
                 }
                 else if (lastHitter == Team.Purple)
                 {
                     // apply penalty to purple agent
-                    purpleAgent.AddReward(-0.1f);
-                    blueAgent.AddReward(0.1f);
                 }
 
                 // end episode
-                blueAgent.EndEpisode();
-                purpleAgent.EndEpisode();
-                ResetScene();
                 break;
 
             case Event.HitBlueGoal:
                 // blue wins
-                blueAgent.AddReward(1f);
-                purpleAgent.AddReward(-1f);
 
                 // turn floor blue
                 StartCoroutine(GoalScoredSwapGroundMaterial(volleyballSettings.blueGoalMaterial, RenderersList, .5f));
 
                 // end episode
-                blueAgent.EndEpisode();
-                purpleAgent.EndEpisode();
-                ResetScene();
                 break;
 
             case Event.HitPurpleGoal:
                 // purple wins
-                purpleAgent.AddReward(1f);
-                blueAgent.AddReward(-1f);
 
                 // turn floor purple
                 StartCoroutine(GoalScoredSwapGroundMaterial(volleyballSettings.purpleGoalMaterial, RenderersList, .5f));
 
                 // end episode
-                blueAgent.EndEpisode();
-                purpleAgent.EndEpisode();
-                ResetScene();
                 break;
 
             case Event.HitIntoBlueArea:
                 if (lastHitter == Team.Purple)
                 {
-                    // purpleAgent.AddReward(1);
                 }
                 break;
 
             case Event.HitIntoPurpleArea:
                 if (lastHitter == Team.Blue)
                 {
-                    // blueAgent.AddReward(1);
                 }
                 break;
         }
@@ -156,25 +137,6 @@ public class VolleyballEnvController : MonoBehaviour
     /// </summary>
     void ResetBall()
     {
-        var randomPosX = Random.Range(-2f, 2f);
-        var randomPosZ = Random.Range(6f, 10f);
-        var randomPosY = Random.Range(6f, 8f);
-
-        // alternate ball spawn side
-        // -1 = spawn blue side, 1 = spawn purple side
-        ballSpawnSide = -1 * ballSpawnSide;
-
-        if (ballSpawnSide == -1)
-        {
-            ball.transform.localPosition = new Vector3(randomPosX, randomPosY, randomPosZ);
-        }
-        else if (ballSpawnSide == 1)
-        {
-            ball.transform.localPosition = new Vector3(randomPosX, randomPosY, -1 * randomPosZ);
-        }
-
-        ballRb.angularVelocity = Vector3.zero;
-        ballRb.velocity = Vector3.zero;
     }
 
     /// <summary>
@@ -204,13 +166,6 @@ public class VolleyballEnvController : MonoBehaviour
     /// </summary>
     void FixedUpdate()
     {
-        resetTimer += 1;
-        if (resetTimer >= MaxEnvironmentSteps && MaxEnvironmentSteps > 0)
-        {
-            blueAgent.EpisodeInterrupted();
-            purpleAgent.EpisodeInterrupted();
-            ResetScene();
-        }
     }
 
     /// <summary>
@@ -218,25 +173,5 @@ public class VolleyballEnvController : MonoBehaviour
     /// </summary>
     public void ResetScene()
     {
-        resetTimer = 0;
-
-        lastHitter = Team.Default; // reset last hitter
-
-        foreach (var agent in AgentsList)
-        {
-            // randomise starting positions and rotations
-            var randomPosX = Random.Range(-2f, 2f);
-            var randomPosZ = Random.Range(-2f, 2f);
-            var randomPosY = Random.Range(0.5f, 3.75f); // depends on jump height
-            var randomRot = Random.Range(-45f, 45f);
-
-            agent.transform.localPosition = new Vector3(randomPosX, randomPosY, randomPosZ);
-            agent.transform.eulerAngles = new Vector3(0, randomRot, 0);
-
-            agent.GetComponent<Rigidbody>().velocity = default(Vector3);
-        }
-
-        // reset ball to starting conditions
-        ResetBall();
     }
 }
