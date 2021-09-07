@@ -49,8 +49,6 @@ public class VolleyballAgent : Agent
         {
             agentRot = 1;
         }
-
-        resetParams = Academy.Instance.EnvironmentParameters;
     }
 
     /// <summary>
@@ -125,60 +123,6 @@ public class VolleyballAgent : Agent
     /// </summary>
     public void MoveAgent(ActionSegment<int> act)
     {
-        var grounded = CheckIfGrounded();
-        var dirToGo = Vector3.zero;
-        var rotateDir = Vector3.zero;
-        var dirToGoForwardAction = act[0];
-        var rotateDirAction = act[1];
-        var dirToGoSideAction = act[2];
-        var jumpAction = act[3];
-
-        if (dirToGoForwardAction == 1)
-            dirToGo = (grounded ? 1f : 0.5f) * transform.forward * 1f;
-        else if (dirToGoForwardAction == 2)
-            dirToGo = (grounded ? 1f : 0.5f) * transform.forward * volleyballSettings.speedReductionFactor * -1f;
-
-        if (rotateDirAction == 1)
-            rotateDir = transform.up * -1f;
-        else if (rotateDirAction == 2)
-            rotateDir = transform.up * 1f;
-
-        if (dirToGoSideAction == 1)
-            dirToGo = (grounded ? 1f : 0.5f) * transform.right * volleyballSettings.speedReductionFactor * -1f;
-        else if (dirToGoSideAction == 2)
-            dirToGo = (grounded ? 1f : 0.5f) * transform.right * volleyballSettings.speedReductionFactor;
-
-        if (jumpAction == 1)
-            if (((jumpingTime <= 0f) && grounded))
-            {
-                Jump();
-            }
-
-        transform.Rotate(rotateDir, Time.fixedDeltaTime * 200f);
-        agentRb.AddForce(agentRot * dirToGo * volleyballSettings.agentRunSpeed,
-            ForceMode.VelocityChange);
-
-        if (jumpingTime > 0f)
-        {
-            jumpTargetPos =
-                new Vector3(agentRb.position.x,
-                    jumpStartingPos.y + volleyballSettings.agentJumpHeight,
-                    agentRb.position.z) + agentRot*dirToGo;
-
-            MoveTowards(jumpTargetPos, agentRb, volleyballSettings.agentJumpVelocity,
-                volleyballSettings.agentJumpVelocityMaxChange);
-        }
-
-        if (!(jumpingTime > 0f) && !grounded)
-        {
-            agentRb.AddForce(
-                Vector3.down * volleyballSettings.fallingForce, ForceMode.Acceleration);
-        }
-
-        if (jumpingTime > 0f)
-        {
-            jumpingTime -= Time.fixedDeltaTime;
-        }
     }
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
@@ -188,62 +132,10 @@ public class VolleyballAgent : Agent
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        // Agent rotation (1 float)
-        sensor.AddObservation(this.transform.rotation.y);
-
-        // Vector from agent to ball (direction to ball) (3 floats)
-        Vector3 toBall = new Vector3((ballRb.transform.position.x - this.transform.position.x)*agentRot, 
-        (ballRb.transform.position.y - this.transform.position.y),
-        (ballRb.transform.position.z - this.transform.position.z)*agentRot);
-
-        sensor.AddObservation(toBall.normalized);
-
-        // Distance from the ball (1 float)
-        sensor.AddObservation(toBall.magnitude);
-
-        // Agent velocity (3 floats)
-        sensor.AddObservation(agentRb.velocity);
-
-        // Ball velocity (3 floats)
-        sensor.AddObservation(ballRb.velocity.y);
-        sensor.AddObservation(ballRb.velocity.z*agentRot);
-        sensor.AddObservation(ballRb.velocity.x*agentRot);
     }
 
     // For human controller
     public override void Heuristic(in ActionBuffers actionsOut)
     {
-        var discreteActionsOut = actionsOut.DiscreteActions;
-        if (Input.GetKey(KeyCode.D))
-        {
-            // rotate right
-            discreteActionsOut[1] = 2;
-        }
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
-        {
-            // forward
-            discreteActionsOut[0] = 1;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            // rotate left
-            discreteActionsOut[1] = 1;
-        }
-        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
-        {
-            // backward
-            discreteActionsOut[0] = 2;
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            // move left
-            discreteActionsOut[2] = 1;
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            // move right
-            discreteActionsOut[2] = 2;
-        }
-        discreteActionsOut[3] = Input.GetKey(KeyCode.Space) ? 1 : 0;
     }
 }
