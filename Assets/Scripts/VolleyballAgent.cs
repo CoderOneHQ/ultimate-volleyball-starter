@@ -114,6 +114,8 @@ public class VolleyballAgent : Agent
     /// </summary>
     public void Jump()
     {
+        jumpingTime = 0.2f;
+        jumpStartingPos = agentRb.position;
     }
 
     /// <summary>
