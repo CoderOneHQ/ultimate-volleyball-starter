@@ -49,8 +49,6 @@ public class VolleyballAgent : Agent
         {
             agentRot = 1;
         }
-
-        // resetParams = Academy.Instance.EnvironmentParameters;
     }
 
     /// <summary>

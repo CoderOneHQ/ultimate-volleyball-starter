@@ -502,7 +502,6 @@ GameObject:
   - component: {fileID: 497495965292054564}
   - component: {fileID: 7756907178769414777}
   - component: {fileID: 2219554007297188915}
-  - component: {fileID: 5485176692513050270}
   - component: {fileID: 6327617998853010357}
   m_Layer: 0
   m_Name: PurpleAgent
@@ -595,19 +594,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
---- !u!65 &5485176692513050270
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5501864745727209264}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &6327617998853010357
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -925,14 +911,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60f4bdfb49a7840a2989bbd741e814f2, type: 3}
---- !u!4 &1319780535009680813 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4974979531414260, guid: 60f4bdfb49a7840a2989bbd741e814f2, type: 3}
-  m_PrefabInstance: {fileID: 1315440115858147161}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1317026924745720295 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1799704108992190, guid: 60f4bdfb49a7840a2989bbd741e814f2, type: 3}
+  m_PrefabInstance: {fileID: 1315440115858147161}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1319780535009680813 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4974979531414260, guid: 60f4bdfb49a7840a2989bbd741e814f2, type: 3}
   m_PrefabInstance: {fileID: 1315440115858147161}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1828789324295451649
