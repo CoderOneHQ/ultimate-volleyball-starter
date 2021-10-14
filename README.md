@@ -1,15 +1,15 @@
 # A hands-on introduction to deep reinforcement learning using Unity ML-Agents
 
-![Ultimate Volleyball](https://uploads-ssl.webflow.com/5ed1e873ef82ae197179be22/612dc700708be07a02a57f58_ultimate-volleyball-v2.gif)
+![Ultimate Volleyball](https://www.gocoder.one/static/ultimate-volleyball-eb08a31356cf6a5add9ad2b3ec76cfc6.gif)
 
-This is a skeleton project used for the tutorial series '[A hands-on introduction to deep reinforcement learning using Unity ML-Agents](https://www.gocoder.one/blog/hands-on-introduction-to-deep-reinforcement-learning)'. 
+This is a skeleton project used for the tutorial series '[A hands-on introduction to deep reinforcement learning using Unity ML-Agents](https://www.gocoder.one/blog/hands-on-introduction-to-deep-reinforcement-learning?s=uvb)'. 
 
 ## Sections
 
-- Part 1: [Getting started with Unity ML-Agents](https://www.gocoder.one/blog/introduction-to-unity-ml-agents)
-- Part 2: [Building a volleyball reinforcement learning environment](https://www.gocoder.one/blog/build-a-reinforcement-learning-environment-using-unity-mlagents)
-- Part 3: [Design reinforcement learning agents](https://www.gocoder.one/blog/designing-reinforcement-learning-agents-using-unity-ml-agents)
-- Part 4: Training an agent using PPO (Coming soon)
+- Part 1: [Getting started with Unity ML-Agents](https://www.gocoder.one/blog/introduction-to-unity-ml-agents?s=uvb)
+- Part 2: [Building a volleyball reinforcement learning environment](https://www.gocoder.one/blog/build-a-reinforcement-learning-environment-using-unity-mlagents?s=uvb)
+- Part 3: [Design reinforcement learning agents](https://www.gocoder.one/blog/designing-reinforcement-learning-agents-using-unity-ml-agents?s=uvb)
+- Part 4: [Training an agent using PPO](https://www.gocoder.one/blog/training-agents-using-ppo-with-unity-ml-agents?s=uvb)
 - Part 5: Self-play with Unity ML-Agents (Coming soon)
 
 ## Credits
