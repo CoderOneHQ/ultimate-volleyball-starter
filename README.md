@@ -10,7 +10,7 @@ This is a skeleton project used for the tutorial series '[A hands-on introductio
 - Part 2: [Building a volleyball reinforcement learning environment](https://www.gocoder.one/blog/build-a-reinforcement-learning-environment-using-unity-mlagents?s=uvb)
 - Part 3: [Design reinforcement learning agents](https://www.gocoder.one/blog/designing-reinforcement-learning-agents-using-unity-ml-agents?s=uvb)
 - Part 4: [Training an agent using PPO](https://www.gocoder.one/blog/training-agents-using-ppo-with-unity-ml-agents?s=uvb)
-- Part 5: Self-play with Unity ML-Agents (Coming soon)
+- Part 5: [Self-play with Unity ML-Agents](https://www.gocoder.one/blog/competitive-self-play-unity-ml-agents?s=uvb)
 
 ## Credits
 - Agent Cube prefabs, materials, and sample code from the ML-Agents projects
